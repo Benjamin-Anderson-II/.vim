@@ -1,0 +1,6 @@
+[submodule "plugged/catppuccin"]
+	path = plugged/catppuccin
+	url = https://github.com/catppuccin/vim
+[submodule "plugged/lightline.vim"]
+	path = plugged/lightline.vim
+	url = https://github.com/itchyny/lightline.vim
