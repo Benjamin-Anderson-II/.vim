@@ -2,13 +2,22 @@
 call plug#begin()
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 Plug 'itchyny/lightline.vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-vinegar'
 call plug#end()
 
 
 " quick hotkeys
 imap <C-s> <Esc>:w<CR>
 nmap <C-s> :w<CR>
-imap <C-BS> <C-W>
+" Remap for md and txt files
+noremap j gj
+noremap k gk
+noremap $ g$
+noremap 0 g^
 
 " navigation
 set whichwrap+=b,s,h,l,<,>,[,]
@@ -50,3 +59,10 @@ let &t_SI = "\<Esc>[6 q" "insert
 let &t_SR = "\<Esc>[4 q" "replace
 let &t_EI = "\<Esc>[2 q" "Normal?
 
+" Specialized options depending on file type
+augroup txt_md_settings
+    let maplocalleader=','
+    autocmd!
+    autocmd BufNewFile,BufRead *.md setlocal wrap nolist linebreak breakat&vim
+    autocmd BufNewFile,BufRead *.txt setlocal wrap nolist linebreak breakat&vim
+augroup END
