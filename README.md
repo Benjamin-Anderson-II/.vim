@@ -2,4 +2,7 @@
 
 If you want to use it, just clone it directly into your home directory.
 
-Next, open Vim and run `:PlugInstall`. Then restart Vim and everything should be operational.
+When you next open vim it will error in the terminal. Just press enter and let `PlugInstall` run. After this run the following comamnd and you're set:
+```
+:so $MYVIMRC
+```

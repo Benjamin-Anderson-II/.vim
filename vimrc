@@ -66,3 +66,6 @@ augroup txt_md_settings
     autocmd BufNewFile,BufRead *.md setlocal wrap nolist linebreak breakat&vim
     autocmd BufNewFile,BufRead *.txt setlocal wrap nolist linebreak breakat&vim
 augroup END
+
+" Automatic installation of missing plugins
+autocmd VimEnter * if !empty(filter(values(g:plugs), '!isdirectory(v:val.dir)')) | PlugInstall | endif
